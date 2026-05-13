@@ -1,25 +1,18 @@
-import controller.CarController;
+import controllerss.CarController;
 import models.Car;
 
 public class App {
     public static void main(String[] args) throws Exception {
         CarController controller = new CarController();
-        Car[] cars = makeCarsList();
+    Car[] lista = makeCarsList();
 
-        System.out.println("--- Antes de ordenar ---");
-        printCars(cars);
+    System.out.println("--- Antes de ordenar ---");
+    for(Car c : lista) System.out.println(c);
 
-        controller.sortByName(cars);
+    controller.sortByName(lista);
 
-        System.out.println("\n--- Después de ordenar ---");
-        printCars(cars);
-    }
-
-    public static void printCars(Car[] cars) {
-        for (Car c : cars) {
-            if (c != null) System.out.println(c);
-        }
-    }
+    System.out.println("\n--- Después de ordenar (Burbuja Avanzado) ---");
+    for(Car c : lista) System.out.println(c);
     }
 
     public static Car[] makeCarsList() {
@@ -49,4 +42,4 @@ public class App {
         return cars;
     }
 
-
+}
